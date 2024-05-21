@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw32nt3y6uyn8"
-path="res://.godot/imported/robot1 - direita.png-9d75eae8ea44f0c94e16e45c27999dc3.ctex"
+path="res://.godot/imported/robot1 - direita.png-dc0d63ac707fe2dce0c041299fa6a343.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/robots/robot1 - direita.png"
-dest_files=["res://.godot/imported/robot1 - direita.png-9d75eae8ea44f0c94e16e45c27999dc3.ctex"]
+source_file="res://sprites/robots/robot1 - direita.png"
+dest_files=["res://.godot/imported/robot1 - direita.png-dc0d63ac707fe2dce0c041299fa6a343.ctex"]
 
 [params]
 

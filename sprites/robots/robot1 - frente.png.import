@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3h15walc7t11"
-path="res://.godot/imported/robot1 - frente.png-b099782c07348264b91ff6760296a8e1.ctex"
+path="res://.godot/imported/robot1 - frente.png-ae8f9af7779eb3df0344458d5b54a77c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/robots/robot1 - frente.png"
-dest_files=["res://.godot/imported/robot1 - frente.png-b099782c07348264b91ff6760296a8e1.ctex"]
+source_file="res://sprites/robots/robot1 - frente.png"
+dest_files=["res://.godot/imported/robot1 - frente.png-ae8f9af7779eb3df0344458d5b54a77c.ctex"]
 
 [params]
 
