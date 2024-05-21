@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bhp88rj8b78ho"]
 
 [ext_resource type="Script" path="res://Scripts/player_2.gd" id="1_nf6o3"]
-[ext_resource type="Texture2D" uid="uid://oplubuwfba8y" path="res://sprites/robots/robot1 - costas.png" id="2_ev2cm"]
-[ext_resource type="Texture2D" uid="uid://cw32nt3y6uyn8" path="res://sprites/robots/robot1 - direita.png" id="3_xyktw"]
-[ext_resource type="Texture2D" uid="uid://b3boes14cupnb" path="res://sprites/robots/robot1 - esquerda.png" id="4_7qtxy"]
-[ext_resource type="Texture2D" uid="uid://c3h15walc7t11" path="res://sprites/robots/robot1 - frente.png" id="5_7saon"]
+[ext_resource type="Texture2D" uid="uid://bsehvv4kidu18" path="res://sprites/robots/robot2 - costas.png" id="2_j8rf6"]
+[ext_resource type="Texture2D" uid="uid://u5vnaw7iaw8r" path="res://sprites/robots/robot2 - direita.png" id="3_iigxu"]
+[ext_resource type="Texture2D" uid="uid://skw6e7xp06x2" path="res://sprites/robots/robot2 - esquerda.png" id="4_jl826"]
+[ext_resource type="Texture2D" uid="uid://cj62um7um1nse" path="res://sprites/robots/robot2 - frente.png" id="5_dyhuc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odlo0"]
 size = Vector2(26, 16)
@@ -13,7 +13,7 @@ size = Vector2(26, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ev2cm")
+"texture": ExtResource("2_j8rf6")
 }],
 "loop": true,
 "name": &"costa",
@@ -21,7 +21,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_xyktw")
+"texture": ExtResource("3_iigxu")
 }],
 "loop": true,
 "name": &"direita",
@@ -29,7 +29,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_7qtxy")
+"texture": ExtResource("4_jl826")
 }],
 "loop": true,
 "name": &"esquerda",
@@ -37,7 +37,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_7saon")
+"texture": ExtResource("5_dyhuc")
 }],
 "loop": true,
 "name": &"frente",
@@ -54,11 +54,11 @@ script = ExtResource("1_nf6o3")
 position = Vector2(3, 27)
 shape = SubResource("RectangleShape2D_odlo0")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["player"]]
 position = Vector2(4, 9)
 scale = Vector2(1.3, 1.626)
 sprite_frames = SubResource("SpriteFrames_qwb6k")
-animation = &"costa"
+animation = &"frente"
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -67,11 +67,4 @@ position = Vector2(3, 27)
 shape = SubResource("RectangleShape2D_tar6j")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1, 33)
-zoom = Vector2(3, 3)
-limit_left = 97
-limit_top = -63
-limit_right = 943
-limit_bottom = 480
-limit_smoothed = true
-editor_draw_limits = true
+zoom = Vector2(2.5, 2.5)

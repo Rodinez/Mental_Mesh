@@ -47,7 +47,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tar6j"]
 size = Vector2(26, 15)
 
-[node name="P1" type="RigidBody2D"]
+[node name="P1" type="RigidBody2D" groups=["player"]]
 script = ExtResource("1_3pc07")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -67,11 +67,4 @@ position = Vector2(3, 27.5)
 shape = SubResource("RectangleShape2D_tar6j")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1, 33)
-zoom = Vector2(3, 3)
-limit_left = 97
-limit_top = -63
-limit_right = 943
-limit_bottom = 480
-limit_smoothed = true
-editor_draw_limits = true
+zoom = Vector2(2.5, 2.5)
