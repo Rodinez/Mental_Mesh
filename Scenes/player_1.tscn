@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://chv4a2ho4hnwf"]
 
 [ext_resource type="Script" path="res://Scripts/player_1.gd" id="1_3pc07"]
-[ext_resource type="Texture2D" uid="uid://oplubuwfba8y" path="res://Sprites/robots/robot1 - costas.png" id="1_dbfv4"]
-[ext_resource type="Texture2D" uid="uid://cw32nt3y6uyn8" path="res://Sprites/robots/robot1 - direita.png" id="2_y0y5e"]
-[ext_resource type="Texture2D" uid="uid://b3boes14cupnb" path="res://Sprites/robots/robot1 - esquerda.png" id="3_htab0"]
-[ext_resource type="Texture2D" uid="uid://c3h15walc7t11" path="res://Sprites/robots/robot1 - frente.png" id="4_ufh0r"]
+[ext_resource type="Texture2D" uid="uid://oplubuwfba8y" path="res://sprites/robots/robot1 - costas.png" id="1_dbfv4"]
+[ext_resource type="Texture2D" uid="uid://cw32nt3y6uyn8" path="res://sprites/robots/robot1 - direita.png" id="2_y0y5e"]
+[ext_resource type="Texture2D" uid="uid://b3boes14cupnb" path="res://sprites/robots/robot1 - esquerda.png" id="3_htab0"]
+[ext_resource type="Texture2D" uid="uid://c3h15walc7t11" path="res://sprites/robots/robot1 - frente.png" id="4_ufh0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odlo0"]
-size = Vector2(26, 37)
+size = Vector2(26, 15)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qwb6k"]
 animations = [{
@@ -45,13 +45,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tar6j"]
-size = Vector2(26, 37)
+size = Vector2(26, 15)
 
 [node name="P1" type="RigidBody2D"]
 script = ExtResource("1_3pc07")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 8.5)
+position = Vector2(3, 27.5)
 shape = SubResource("RectangleShape2D_odlo0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -63,7 +63,15 @@ animation = &"costa"
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(3, 8.5)
+position = Vector2(3, 27.5)
 shape = SubResource("RectangleShape2D_tar6j")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, 33)
+zoom = Vector2(3, 3)
+limit_left = 97
+limit_top = -63
+limit_right = 943
+limit_bottom = 480
+limit_smoothed = true
+editor_draw_limits = true
