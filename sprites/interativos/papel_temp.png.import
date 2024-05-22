@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://citmqq5irh5qt"
-path="res://.godot/imported/porta_temp.png-42655df5f5949547480a0c1f3d0f0919.ctex"
+uid="uid://bhxtmejb0itg"
+path="res://.godot/imported/papel_temp.png-c72937ddc7a01dcec90c67908445b2eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/robots/porta_temp.png"
-dest_files=["res://.godot/imported/porta_temp.png-42655df5f5949547480a0c1f3d0f0919.ctex"]
+source_file="res://sprites/interativos/papel_temp.png"
+dest_files=["res://.godot/imported/papel_temp.png-c72937ddc7a01dcec90c67908445b2eb.ctex"]
 
 [params]
 

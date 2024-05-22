@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xuu4fhaql8it"
-path="res://.godot/imported/parede-teste.png-27cd969d48fa7829300f05f125b19055.ctex"
+uid="uid://citmqq5irh5qt"
+path="res://.godot/imported/porta_temp.png-31cabed62c197e8a658e8658a4f0a4f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/robots/parede-teste.png"
-dest_files=["res://.godot/imported/parede-teste.png-27cd969d48fa7829300f05f125b19055.ctex"]
+source_file="res://sprites/interativos/porta_temp.png"
+dest_files=["res://.godot/imported/porta_temp.png-31cabed62c197e8a658e8658a4f0a4f3.ctex"]
 
 [params]
 
