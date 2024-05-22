@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dohixo3kho1lw"]
 
 [ext_resource type="Script" path="res://scripts/door.gd" id="1_cj6hi"]
-[ext_resource type="Texture2D" uid="uid://citmqq5irh5qt" path="res://sprites/robots/porta_temp.png" id="1_pwtmm"]
+[ext_resource type="Texture2D" uid="uid://citmqq5irh5qt" path="res://sprites/interativos/porta_temp.png" id="2_442px"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ra58g"]
 size = Vector2(64, 64)
@@ -13,7 +13,7 @@ size = Vector2(68, 69)
 script = ExtResource("1_cj6hi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_pwtmm")
+texture = ExtResource("2_442px")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ra58g")
@@ -25,3 +25,4 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_oxsmp")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
