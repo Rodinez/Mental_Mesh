@@ -13,10 +13,10 @@ func _process(_delta):
 		if player_nearby and Input.is_action_just_pressed("interact"):
 			if !Global.opened_doors[1]:
 				Global.opened_doors[1] = true
-				$AnimatedSprite2D.play("ativada")
+				$AnimatedSprite2D.play("dir_int")
 			else:  
 				Global.opened_doors[1] = false
-				$AnimatedSprite2D.play("default")
+				$AnimatedSprite2D.play("esq_int")
 			
 
 func _on_area_2d_body_entered(body):

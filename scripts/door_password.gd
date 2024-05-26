@@ -37,13 +37,18 @@ func show_password_ui():
 	add_child(password_ui_instance)
 	var line_edit = password_ui_instance.get_node("LineEdit") as LineEdit
 	Global.can_move = false
-	line_edit.connect("text_submitted", Callable(self, "_on_password_entered"))
 	line_edit.connect("text_changed", Callable(self, "_on_text_changed"))
+	line_edit.connect("text_submitted", Callable(self, "_on_password_entered"))
 	line_edit.grab_focus()
 
 func _on_text_changed(new_text):
-	if !new_text.is_valid_int() and new_text != "":
-		password_ui_instance.get_node("LineEdit").text = new_text.substr(0, new_text.length() - 1)
+	var line_edit = password_ui_instance.get_node("LineEdit")
+	var filtered_text = ""
+	for i in range(new_text.length()):
+		if new_text[i].is_valid_int():
+			filtered_text += new_text[i]
+	if line_edit.text != filtered_text:
+		line_edit.text = filtered_text
 
 func _on_password_entered(input_password):
 	if input_password == str(Global.password):
