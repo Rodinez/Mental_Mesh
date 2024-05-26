@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://befgfpyfnpsmc"]
+
+[ext_resource type="Script" path="res://scripts/lever.gd" id="1_cjb6g"]
+[ext_resource type="Texture2D" uid="uid://dj33iw8airf0o" path="res://sprites/interativos/alavanca_dir.png" id="2_37lb1"]
+[ext_resource type="Texture2D" uid="uid://88lq43cbp30s" path="res://sprites/interativos/alavanca_esq.png" id="3_wsyk0"]
+[ext_resource type="Texture2D" uid="uid://gdjtxl5vr7l2" path="res://sprites/interativos/alavanca_dir_int.png" id="4_sjgte"]
+[ext_resource type="Texture2D" uid="uid://cwbgko8gr4lal" path="res://sprites/interativos/alavanca_esq_dir.png" id="5_k2f0d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgbab"]
+size = Vector2(57, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gx16e"]
+size = Vector2(19, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xxbx5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_37lb1")
+}],
+"loop": true,
+"name": &"ativada",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wsyk0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_sjgte")
+}],
+"loop": true,
+"name": &"dir_int",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_k2f0d")
+}],
+"loop": true,
+"name": &"esq_int",
+"speed": 5.0
+}]
+
+[node name="lever" type="RigidBody2D"]
+script = ExtResource("1_cjb6g")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 9)
+shape = SubResource("RectangleShape2D_tgbab")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 12)
+shape = SubResource("RectangleShape2D_gx16e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_xxbx5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
