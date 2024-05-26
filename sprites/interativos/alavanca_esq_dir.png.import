@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhxtmejb0itg"
-path="res://.godot/imported/papel_temp.png-c72937ddc7a01dcec90c67908445b2eb.ctex"
+uid="uid://cwbgko8gr4lal"
+path="res://.godot/imported/alavanca_esq_dir.png-5355031ed6192de40e6252e6dabcfe0f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/interativos/papel_temp.png"
-dest_files=["res://.godot/imported/papel_temp.png-c72937ddc7a01dcec90c67908445b2eb.ctex"]
+source_file="res://sprites/interativos/alavanca_esq_dir.png"
+dest_files=["res://.godot/imported/alavanca_esq_dir.png-5355031ed6192de40e6252e6dabcfe0f.ctex"]
 
 [params]
 
