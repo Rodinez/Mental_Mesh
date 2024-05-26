@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://r66qgsd88i00"]
+[gd_scene load_steps=13 format=3 uid="uid://r66qgsd88i00"]
 
 [ext_resource type="Script" path="res://scripts/fase_1.gd" id="1_rht4d"]
 [ext_resource type="Texture2D" uid="uid://b3v54x5lknmbw" path="res://sprites/background.jpg" id="2_fq0v3"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bix2wb1havqcy" path="res://Scenes/papel.tscn" id="7_8txxr"]
 [ext_resource type="PackedScene" uid="uid://c31h4mmolm8en" path="res://Scenes/door.tscn" id="7_sg10d"]
 [ext_resource type="PackedScene" uid="uid://befgfpyfnpsmc" path="res://Scenes/lever.tscn" id="9_6bvb7"]
+[ext_resource type="PackedScene" uid="uid://bkq5dh3k3rwat" path="res://Scenes/trapdor.tscn" id="10_lekia"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xiwit"]
 texture = ExtResource("5_uf1mt")
@@ -185,5 +186,15 @@ gravity_scale = 0.0
 
 [node name="lever" parent="." instance=ExtResource("9_6bvb7")]
 visible = false
-position = Vector2(935, 186)
+position = Vector2(918, 185)
+gravity_scale = 0.0
+
+[node name="trapdoor_p2" parent="." instance=ExtResource("10_lekia")]
+visible = false
+position = Vector2(879, 1297)
+gravity_scale = 0.0
+
+[node name="trapdoor_p1" parent="." instance=ExtResource("10_lekia")]
+visible = false
+position = Vector2(996, 224)
 gravity_scale = 0.0

@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkq5dh3k3rwat"]
+
+[ext_resource type="Script" path="res://scripts/trapdor.gd" id="1_t05up"]
+[ext_resource type="Texture2D" uid="uid://2stx8gtj74u2" path="res://sprites/interativos/trapdor_aberto.png" id="1_xvxkb"]
+[ext_resource type="Texture2D" uid="uid://baec283hnq2ra" path="res://sprites/interativos/trapdor.png" id="2_6jtbx"]
+[ext_resource type="Texture2D" uid="uid://3dd85y65bjga" path="res://sprites/interativos/trapdor_int.png" id="3_mirp0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rekqm"]
+size = Vector2(45, 44)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4pepp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xvxkb")
+}],
+"loop": true,
+"name": &"aberta",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6jtbx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mirp0")
+}],
+"loop": true,
+"name": &"int",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_163ih"]
+size = Vector2(68, 66)
+
+[node name="Node2D" type="RigidBody2D"]
+script = ExtResource("1_t05up")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_rekqm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 0.785398
+sprite_frames = SubResource("SpriteFrames_4pepp")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_163ih")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
