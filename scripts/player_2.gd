@@ -9,6 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	self.rotation = 0
 	if Global.can_move and Global.player_now == 2:
 		$Camera2D.enabled = true
 		Global.player_position = self.global_position

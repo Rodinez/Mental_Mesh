@@ -6,3 +6,6 @@ var max_players = 2
 var tween = 0
 var can_move = true
 var password
+var player_paper
+var player_door
+var opened_doors = [false, false, false]
