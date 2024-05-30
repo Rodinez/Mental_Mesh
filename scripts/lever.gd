@@ -25,7 +25,7 @@ func _on_area_2d_body_entered(body):
 			$AnimatedSprite2D.play("dir_int")  
 		else:
 			$AnimatedSprite2D.play("esq_int")  
-			player_nearby = true
+		player_nearby = true
 
 
 func _on_area_2d_body_exited(body):
@@ -34,4 +34,4 @@ func _on_area_2d_body_exited(body):
 			$AnimatedSprite2D.play("ativada")  
 		else:
 			$AnimatedSprite2D.play("default")  
-			player_nearby = true
+		player_nearby = false

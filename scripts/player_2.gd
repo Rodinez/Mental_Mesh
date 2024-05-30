@@ -28,12 +28,10 @@ func _process(delta):
 			$AnimatedSprite2D.play("costa")
 		if Input.is_action_just_released("change") and Global.recent_change == 1:
 			Global.recent_change = 0
-		elif Input.is_action_just_released("change"):
+		elif Input.is_action_just_released("change") and Global.leave[0] <= 0:
 			$Camera2D.enabled = false
 			Global.recent_change = 1
-			Global.player_now += 1
-			if Global.player_now > Global.max_players:
-				Global.player_now = 1
+			Global.player_now = 1
 		move_and_collide(velocity.normalized() * speed * delta)
 		if Global.tween == 1:
 			var tween = create_tween()

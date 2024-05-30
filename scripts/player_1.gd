@@ -25,7 +25,7 @@ func _process(delta):
 		if Input.is_action_pressed("move_up"):
 			velocity.y -= 1
 			$AnimatedSprite2D.play("costa")
-		if Input.is_action_just_released("change"):
+		if Input.is_action_just_released("change") and Global.leave[1] <= 0:
 			$Camera2D.enabled = false
 			Global.recent_change = 1
 			Global.player_now += 1

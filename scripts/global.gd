@@ -8,4 +8,5 @@ var can_move = true
 var password
 var player_paper
 var player_door
-var opened_doors = [false, false, false]
+var leave = [0, 0]
+var opened_doors = [false, false]
