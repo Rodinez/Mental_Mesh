@@ -186,7 +186,7 @@ gravity_scale = 0.0
 
 [node name="lever" parent="." instance=ExtResource("9_6bvb7")]
 visible = false
-position = Vector2(918, 185)
+position = Vector2(890, 184)
 gravity_scale = 0.0
 
 [node name="trapdoor_p2" parent="." instance=ExtResource("10_lekia")]

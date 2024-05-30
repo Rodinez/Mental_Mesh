@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cwbgko8gr4lal" path="res://sprites/interativos/alavanca_esq_dir.png" id="5_k2f0d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tgbab"]
-size = Vector2(57, 47)
+size = Vector2(36, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gx16e"]
 size = Vector2(19, 8)
@@ -53,7 +53,7 @@ script = ExtResource("1_cjb6g")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, 9)
+position = Vector2(0, 10.5)
 shape = SubResource("RectangleShape2D_tgbab")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
