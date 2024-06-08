@@ -27,4 +27,4 @@ func _process(_delta):
 		$P2.queue_free()
 		Global.leave[1] = 2
 	if Global.leave[0] == 2 and Global.leave[1] == 2:
-		get_tree().change_scene_to_file("res://Scenes/end.tscn")
+		get_tree().change_scene_to_file("res://Scenes/fase_2.tscn")
