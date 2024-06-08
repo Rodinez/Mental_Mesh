@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://b3v54x5lknmbw" path="res://sprites/background.jpg" id="2_fq0v3"]
 [ext_resource type="PackedScene" uid="uid://chv4a2ho4hnwf" path="res://Scenes/player_1.tscn" id="3_64qvn"]
 [ext_resource type="PackedScene" uid="uid://bhp88rj8b78ho" path="res://Scenes/player_2.tscn" id="4_bgnkm"]
-[ext_resource type="Texture2D" uid="uid://c5dk62d6u1ptp" path="res://sprites/tilemap/ambiente.png" id="5_uf1mt"]
 [ext_resource type="PackedScene" uid="uid://dohixo3kho1lw" path="res://Scenes/door_password.tscn" id="6_sifdi"]
 [ext_resource type="PackedScene" uid="uid://bix2wb1havqcy" path="res://Scenes/papel.tscn" id="7_8txxr"]
 [ext_resource type="PackedScene" uid="uid://c31h4mmolm8en" path="res://Scenes/door.tscn" id="7_sg10d"]
 [ext_resource type="PackedScene" uid="uid://befgfpyfnpsmc" path="res://Scenes/lever.tscn" id="9_6bvb7"]
 [ext_resource type="PackedScene" uid="uid://bkq5dh3k3rwat" path="res://Scenes/trapdor.tscn" id="10_lekia"]
+[ext_resource type="Texture2D" uid="uid://c5dk62d6u1ptp" path="res://sprites/tilemap/ambiente.png" id="10_w2c7t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xiwit"]
-texture = ExtResource("5_uf1mt")
+texture = ExtResource("10_w2c7t")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -133,7 +133,7 @@ texture = ExtResource("5_uf1mt")
 0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:4/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_ic3fl"]
+[sub_resource type="TileSet" id="TileSet_jcnfi"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xiwit")
 
@@ -141,7 +141,8 @@ sources/0 = SubResource("TileSetAtlasSource_xiwit")
 script = ExtResource("1_rht4d")
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_ic3fl")
+show_behind_parent = true
+tile_set = SubResource("TileSet_jcnfi")
 collision_animatable = true
 format = 2
 layer_0/name = "wall"
