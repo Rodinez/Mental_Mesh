@@ -10,3 +10,5 @@ var player_paper
 var player_door
 var leave = [0, 0]
 var opened_doors = [false, false]
+var areas_passed = [false, false, false, false]
+var chances = 7
