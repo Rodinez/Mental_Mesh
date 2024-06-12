@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://hbj17htdb4l7"]
+[gd_scene load_steps=22 format=3 uid="uid://hbj17htdb4l7"]
 
 [ext_resource type="Script" path="res://scripts/fase_2.gd" id="1_kct2v"]
 [ext_resource type="PackedScene" uid="uid://chv4a2ho4hnwf" path="res://Scenes/player_1.tscn" id="2_lhym8"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scripts/lever2_fase2.gd" id="9_wexhc"]
 [ext_resource type="Script" path="res://scripts/lever3_fase2.gd" id="10_1xyos"]
 [ext_resource type="Script" path="res://scripts/lever4_fase2.gd" id="11_b1qpu"]
+[ext_resource type="PackedScene" uid="uid://d3gkqyeu02yaa" path="res://Scenes/placa.tscn" id="14_od6wg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8m42y"]
 texture = ExtResource("2_ybqn6")
@@ -221,15 +222,13 @@ position = Vector2(679, 1950)
 gravity_scale = 0.0
 
 [node name="door_p1" parent="." instance=ExtResource("2_vp1or")]
-position = Vector2(14, 224)
+position = Vector2(14.5, 224)
 rotation = -1.5708
-gravity_scale = 0.0
 script = ExtResource("4_rs2gs")
 
 [node name="door_p2" parent="." instance=ExtResource("2_vp1or")]
 position = Vector2(579, 1951)
 rotation = 1.5708
-gravity_scale = 0.0
 
 [node name="P1" parent="." instance=ExtResource("2_lhym8")]
 position = Vector2(116, 196)
@@ -264,134 +263,118 @@ texture = ExtResource("3_ay6mm")
 
 [node name="lever" parent="." instance=ExtResource("7_561q7")]
 show_behind_parent = true
-position = Vector2(145, 1867)
+position = Vector2(145, 1876)
 gravity_scale = 0.0
 script = ExtResource("8_4230b")
 
 [node name="lever2" parent="." instance=ExtResource("7_561q7")]
 show_behind_parent = true
-position = Vector2(258, 1867)
+position = Vector2(258, 1876)
 gravity_scale = 0.0
 script = ExtResource("9_wexhc")
 
 [node name="lever3" parent="." instance=ExtResource("7_561q7")]
 show_behind_parent = true
-position = Vector2(375, 1867)
+position = Vector2(375, 1876)
 gravity_scale = 0.0
 script = ExtResource("10_1xyos")
 
 [node name="lever4" parent="." instance=ExtResource("7_561q7")]
 show_behind_parent = true
-position = Vector2(489, 1867)
+position = Vector2(490, 1876)
 gravity_scale = 0.0
 script = ExtResource("11_b1qpu")
 
 [node name="door1" parent="." instance=ExtResource("2_vp1or")]
-show_behind_parent = true
-position = Vector2(177, 49)
+top_level = true
+position = Vector2(177.5, 49)
 rotation = 1.5708
-gravity_scale = 0.0
 script = null
 
 [node name="door2" parent="." instance=ExtResource("2_vp1or")]
-show_behind_parent = true
-position = Vector2(178, 160)
+top_level = true
+position = Vector2(177.5, 160)
 rotation = 1.5708
-gravity_scale = 0.0
 script = null
 
 [node name="door3" parent="." instance=ExtResource("2_vp1or")]
-show_behind_parent = true
-position = Vector2(177, 272)
+top_level = true
+position = Vector2(177.5, 271)
 rotation = 1.5708
-gravity_scale = 0.0
 script = null
 
 [node name="door4" parent="." instance=ExtResource("2_vp1or")]
-show_behind_parent = true
-position = Vector2(178, 384)
+top_level = true
+position = Vector2(177.5, 384)
 rotation = 1.5708
-gravity_scale = 0.0
 script = null
 
 [node name="door5" parent="." instance=ExtResource("2_vp1or")]
-show_behind_parent = true
-position = Vector2(273, 96)
-gravity_scale = 0.0
+top_level = true
+position = Vector2(273, 94.5)
 script = null
 
 [node name="door6" parent="." instance=ExtResource("2_vp1or")]
-show_behind_parent = true
+top_level = true
 position = Vector2(273, 206)
-gravity_scale = 0.0
 script = null
 
 [node name="door7" parent="." instance=ExtResource("2_vp1or")]
-show_behind_parent = true
+top_level = true
 position = Vector2(344, 49)
 rotation = 1.5708
-gravity_scale = 0.0
 script = null
 
 [node name="door8" parent="." instance=ExtResource("2_vp1or")]
-show_behind_parent = true
+top_level = true
 position = Vector2(509, 49)
 rotation = 1.5708
-gravity_scale = 0.0
 script = null
 
 [node name="door9" parent="." instance=ExtResource("2_vp1or")]
-show_behind_parent = true
+top_level = true
 position = Vector2(432, 207)
-gravity_scale = 0.0
 script = null
 
 [node name="door10" parent="." instance=ExtResource("2_vp1or")]
-show_behind_parent = true
+top_level = true
 position = Vector2(345, 160)
 rotation = 1.5708
-gravity_scale = 0.0
 script = null
 
 [node name="door11" parent="." instance=ExtResource("2_vp1or")]
-show_behind_parent = true
+top_level = true
 position = Vector2(512, 161)
 rotation = 1.5708
-gravity_scale = 0.0
 script = null
 
 [node name="door12" parent="." instance=ExtResource("2_vp1or")]
-show_behind_parent = true
-position = Vector2(346, 275)
+top_level = true
+position = Vector2(347, 271)
 rotation = 1.5708
-gravity_scale = 0.0
 script = null
 
 [node name="door13" parent="." instance=ExtResource("2_vp1or")]
-show_behind_parent = true
+top_level = true
 position = Vector2(347, 384)
 rotation = 1.5708
-gravity_scale = 0.0
 script = null
 
 [node name="door14" parent="." instance=ExtResource("2_vp1or")]
-show_behind_parent = true
+top_level = true
 position = Vector2(520, 385)
 rotation = 1.5708
-gravity_scale = 0.0
 script = null
 
 [node name="door15" parent="." instance=ExtResource("2_vp1or")]
-show_behind_parent = true
+top_level = true
 position = Vector2(516, 274)
 rotation = 1.5708
-gravity_scale = 0.0
 script = null
 
 [node name="door16" parent="." instance=ExtResource("2_vp1or")]
-show_behind_parent = true
+top_level = true
 position = Vector2(430, 320)
-gravity_scale = 0.0
 script = null
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -424,8 +407,17 @@ shape = SubResource("RectangleShape2D_m6tuv")
 position = Vector2(95, 216)
 shape = SubResource("RectangleShape2D_l0vw5")
 
+[node name="Node2D" parent="." instance=ExtResource("14_od6wg")]
+show_behind_parent = true
+position = Vector2(315, 1847)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_3_body_entered"]
 [connection signal="body_entered" from="Area2D4" to="." method="_on_area_2d_4_body_entered"]
 [connection signal="body_entered" from="Area2D5" to="." method="_on_area_2d_5_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

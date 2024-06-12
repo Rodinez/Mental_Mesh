@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://d3gkqyeu02yaa"]
+
+[ext_resource type="Script" path="res://scripts/placa.gd" id="1_2pgbx"]
+[ext_resource type="Texture2D" uid="uid://dnrgt83r12dit" path="res://sprites/placas/placa_0.png" id="1_msxtj"]
+[ext_resource type="Texture2D" uid="uid://ba3dhdvxd1a05" path="res://sprites/placas/placa_1.png" id="2_lhrhb"]
+[ext_resource type="Texture2D" uid="uid://ch7u4i8gl6ate" path="res://sprites/placas/placa_2.png" id="3_uqcbv"]
+[ext_resource type="Texture2D" uid="uid://bq5kt20sumv5x" path="res://sprites/placas/placa_3.png" id="4_3u3an"]
+[ext_resource type="Texture2D" uid="uid://bavo0jp3u5pnn" path="res://sprites/placas/placa_4.png" id="5_j0rvs"]
+[ext_resource type="Texture2D" uid="uid://b1vty1gq0ofi0" path="res://sprites/placas/placa_5.png" id="6_j3kj0"]
+[ext_resource type="Texture2D" uid="uid://bvj483gl3af1d" path="res://sprites/placas/placa_6.png" id="7_cj85v"]
+[ext_resource type="Texture2D" uid="uid://d126rkemrnjjc" path="res://sprites/placas/placa_7.png" id="8_3usq3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m5kgs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_msxtj")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lhrhb")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uqcbv")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3u3an")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_j0rvs")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_j3kj0")
+}],
+"loop": true,
+"name": &"5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_cj85v")
+}],
+"loop": true,
+"name": &"6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_3usq3")
+}],
+"loop": true,
+"name": &"7",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_2pgbx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m5kgs")
+animation = &"2"

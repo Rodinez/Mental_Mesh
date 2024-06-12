@@ -10,14 +10,15 @@ func _ready():
 	for i in range(0, 4):
 		Global.areas_passed[i] = false
 	Global.password = 0
+	Global.chances = 7
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if current_doors != Global.password:
 		Global.chances = Global.chances - 1
 		current_doors = Global.password
-	if Global.chances <= 0:
-		get_tree().change_scene_to_file("res://Scenes/fase_2.tscn")
+	if Global.chances < 0:
+		get_tree().reload_current_scene()
 	match Global.password:
 		1:
 			$lever2/AnimatedSprite2D.play("default")
@@ -134,3 +135,44 @@ func _on_area_2d_5_body_entered(body):
 	if "player" in body.get_groups() and not false in Global.areas_passed:
 		Global.opened_doors[0] = true
 		Global.opened_doors[1] = true
+
+
+func _on_timer_timeout():
+	if Global.player_position.y < $door5.global_position.y:
+		$door5.top_level = true
+		$door5.show_behind_parent = false
+		$door6.top_level = true
+		$door6.show_behind_parent = false
+		$door9.top_level = true
+		$door9.show_behind_parent = false
+		$door16.top_level = true
+		$door16.show_behind_parent = false
+	elif Global.player_position.y < $door6.global_position.y:
+		$door5.top_level = false
+		$door5.show_behind_parent = true
+		$door6.top_level = true
+		$door6.show_behind_parent = false
+		$door9.top_level = true
+		$door9.show_behind_parent = false
+		$door16.top_level = true
+		$door16.show_behind_parent = false
+	elif Global.player_position.y < $door16.global_position.y:
+		$door5.top_level = false
+		$door5.show_behind_parent = true
+		$door6.top_level = false
+		$door6.show_behind_parent = true
+		$door9.top_level = false
+		$door9.show_behind_parent = true
+		$door16.top_level = true
+		$door16.show_behind_parent = false
+	elif Global.player_position.y > $door16.global_position.y:
+		$door5.top_level = false
+		$door5.show_behind_parent = true
+		$door6.top_level = false
+		$door6.show_behind_parent = true
+		$door9.top_level = false
+		$door9.show_behind_parent = true
+		$door16.top_level = false
+		$door16.show_behind_parent = true
+	$Timer.set_wait_time(0.1)
+	$Timer.start()

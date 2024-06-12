@@ -179,7 +179,6 @@ gravity_scale = 0.0
 [node name="door" parent="." instance=ExtResource("7_sg10d")]
 position = Vector2(785.5, 1296)
 rotation = 1.5708
-gravity_scale = 0.0
 
 [node name="papel" parent="." instance=ExtResource("7_8txxr")]
 position = Vector2(360, 1293)

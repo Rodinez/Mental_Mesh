@@ -9,24 +9,23 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if player_nearby and Input.is_action_just_pressed("interact"):
+	if player_nearby and Input.is_action_just_pressed("interact") and Global.player_now == 2:
 		Global.password = 3
 		$AnimatedSprite2D.play("dir_int")
-			
 
 func _on_area_2d_body_entered(body):
 	if "player" in body.get_groups():
+		player_nearby = true
 		if Global.password == 3:
 			$AnimatedSprite2D.play("dir_int")  
 		else:
 			$AnimatedSprite2D.play("esq_int")  
-		player_nearby = true
 
 
 func _on_area_2d_body_exited(body):
 	if "player" in body.get_groups():
+		player_nearby = false
 		if Global.password == 3:
 			$AnimatedSprite2D.play("ativada")  
 		else:
 			$AnimatedSprite2D.play("default")  
-		player_nearby = false

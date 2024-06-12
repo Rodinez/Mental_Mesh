@@ -12,3 +12,4 @@ var leave = [0, 0]
 var opened_doors = [false, false]
 var areas_passed = [false, false, false, false]
 var chances = 7
+# 3 2 3 1 2 4 1
