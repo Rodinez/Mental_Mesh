@@ -9,11 +9,144 @@ func _ready():
 	Global.opened_doors = [false, false]
 	for i in range(0, 4):
 		Global.areas_passed[i] = false
+		Global.player_nearby[i] = false
 	Global.password = 0
 	Global.chances = 7
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	match Global.password:
+		0:
+			if Global.player_nearby[0]:
+				$lever/AnimatedSprite2D.play("esq_int")
+				$lever2/AnimatedSprite2D.play("default")
+				$lever3/AnimatedSprite2D.play("default")
+				$lever4/AnimatedSprite2D.play("default")
+			elif Global.player_nearby[1]:
+				$lever/AnimatedSprite2D.play("default")
+				$lever2/AnimatedSprite2D.play("esq_int")
+				$lever3/AnimatedSprite2D.play("default")
+				$lever4/AnimatedSprite2D.play("default")
+			elif Global.player_nearby[2]:
+				$lever/AnimatedSprite2D.play("default")
+				$lever2/AnimatedSprite2D.play("default")
+				$lever3/AnimatedSprite2D.play("esq_int")
+				$lever4/AnimatedSprite2D.play("default")
+			elif Global.player_nearby[3]:
+				$lever/AnimatedSprite2D.play("default")
+				$lever2/AnimatedSprite2D.play("default")
+				$lever3/AnimatedSprite2D.play("default")
+				$lever4/AnimatedSprite2D.play("esq_int")
+			else:
+				$lever/AnimatedSprite2D.play("default")
+				$lever2/AnimatedSprite2D.play("default")
+				$lever3/AnimatedSprite2D.play("default")
+				$lever4/AnimatedSprite2D.play("default")
+		1:
+			if Global.player_nearby[0]:
+				$lever/AnimatedSprite2D.play("dir_int")
+				$lever2/AnimatedSprite2D.play("default")
+				$lever3/AnimatedSprite2D.play("default")
+				$lever4/AnimatedSprite2D.play("default")
+			elif Global.player_nearby[1]:
+				$lever/AnimatedSprite2D.play("ativada")
+				$lever2/AnimatedSprite2D.play("esq_int")
+				$lever3/AnimatedSprite2D.play("default")
+				$lever4/AnimatedSprite2D.play("default")
+			elif Global.player_nearby[2]:
+				$lever/AnimatedSprite2D.play("ativada")
+				$lever2/AnimatedSprite2D.play("default")
+				$lever3/AnimatedSprite2D.play("esq_int")
+				$lever4/AnimatedSprite2D.play("default")
+			elif Global.player_nearby[3]:
+				$lever/AnimatedSprite2D.play("ativada")
+				$lever2/AnimatedSprite2D.play("default")
+				$lever3/AnimatedSprite2D.play("default")
+				$lever4/AnimatedSprite2D.play("esq_int")
+			else:
+				$lever/AnimatedSprite2D.play("ativada")
+				$lever2/AnimatedSprite2D.play("default")
+				$lever3/AnimatedSprite2D.play("default")
+				$lever4/AnimatedSprite2D.play("default")
+		2:
+			if Global.player_nearby[0]:
+				$lever/AnimatedSprite2D.play("esq_int")
+				$lever2/AnimatedSprite2D.play("ativada")
+				$lever3/AnimatedSprite2D.play("default")
+				$lever4/AnimatedSprite2D.play("default")
+			elif Global.player_nearby[1]:
+				$lever/AnimatedSprite2D.play("default")
+				$lever2/AnimatedSprite2D.play("dir_int")
+				$lever3/AnimatedSprite2D.play("default")
+				$lever4/AnimatedSprite2D.play("default")
+			elif Global.player_nearby[2]:
+				$lever/AnimatedSprite2D.play("default")
+				$lever2/AnimatedSprite2D.play("ativada")
+				$lever3/AnimatedSprite2D.play("esq_int")
+				$lever4/AnimatedSprite2D.play("default")
+			elif Global.player_nearby[3]:
+				$lever/AnimatedSprite2D.play("default")
+				$lever2/AnimatedSprite2D.play("ativada")
+				$lever3/AnimatedSprite2D.play("default")
+				$lever4/AnimatedSprite2D.play("esq_int")
+			else:
+				$lever/AnimatedSprite2D.play("default")
+				$lever2/AnimatedSprite2D.play("ativada")
+				$lever3/AnimatedSprite2D.play("default")
+				$lever4/AnimatedSprite2D.play("default")
+		3:
+			if Global.player_nearby[0]:
+				$lever/AnimatedSprite2D.play("esq_int")
+				$lever2/AnimatedSprite2D.play("default")
+				$lever3/AnimatedSprite2D.play("ativada")
+				$lever4/AnimatedSprite2D.play("default")
+			elif Global.player_nearby[1]:
+				$lever/AnimatedSprite2D.play("default")
+				$lever2/AnimatedSprite2D.play("esq_int")
+				$lever3/AnimatedSprite2D.play("ativada")
+				$lever4/AnimatedSprite2D.play("default")
+			elif Global.player_nearby[2]:
+				$lever/AnimatedSprite2D.play("default")
+				$lever2/AnimatedSprite2D.play("default")
+				$lever3/AnimatedSprite2D.play("dir_int")
+				$lever4/AnimatedSprite2D.play("default")
+			elif Global.player_nearby[3]:
+				$lever/AnimatedSprite2D.play("default")
+				$lever2/AnimatedSprite2D.play("default")
+				$lever3/AnimatedSprite2D.play("ativada")
+				$lever4/AnimatedSprite2D.play("esq_int")
+			else:
+				$lever/AnimatedSprite2D.play("default")
+				$lever2/AnimatedSprite2D.play("default")
+				$lever3/AnimatedSprite2D.play("ativada")
+				$lever4/AnimatedSprite2D.play("default")
+		4:
+			if Global.player_nearby[0]:
+				$lever/AnimatedSprite2D.play("esq_int")
+				$lever2/AnimatedSprite2D.play("default")
+				$lever3/AnimatedSprite2D.play("default")
+				$lever4/AnimatedSprite2D.play("ativada")
+			elif Global.player_nearby[1]:
+				$lever/AnimatedSprite2D.play("default")
+				$lever2/AnimatedSprite2D.play("esq_int")
+				$lever3/AnimatedSprite2D.play("default")
+				$lever4/AnimatedSprite2D.play("ativada")
+			elif Global.player_nearby[2]:
+				$lever/AnimatedSprite2D.play("default")
+				$lever2/AnimatedSprite2D.play("default")
+				$lever3/AnimatedSprite2D.play("esq_int")
+				$lever4/AnimatedSprite2D.play("ativada")
+			elif Global.player_nearby[3]:
+				$lever/AnimatedSprite2D.play("default")
+				$lever2/AnimatedSprite2D.play("default")
+				$lever3/AnimatedSprite2D.play("default")
+				$lever4/AnimatedSprite2D.play("dir_int")
+			else:
+				$lever/AnimatedSprite2D.play("default")
+				$lever2/AnimatedSprite2D.play("default")
+				$lever3/AnimatedSprite2D.play("default")
+				$lever4/AnimatedSprite2D.play("ativada")
+	
 	if current_doors != Global.password:
 		Global.chances = Global.chances - 1
 		current_doors = Global.password
@@ -21,9 +154,6 @@ func _process(_delta):
 		get_tree().reload_current_scene()
 	match Global.password:
 		1:
-			$lever2/AnimatedSprite2D.play("default")
-			$lever3/AnimatedSprite2D.play("default")
-			$lever4/AnimatedSprite2D.play("default")
 			for i in range(1, 17):
 				var door_path = "door" + str(i)
 				var door = get_node_or_null(door_path)
@@ -40,9 +170,6 @@ func _process(_delta):
 						sprite.play("aberta")
 						collision_shape.disabled = true
 		2:
-			$lever/AnimatedSprite2D.play("default")
-			$lever3/AnimatedSprite2D.play("default")
-			$lever4/AnimatedSprite2D.play("default")
 			for i in range(1, 17):
 				var door_path = "door" + str(i)
 				var door = get_node_or_null(door_path)
@@ -59,9 +186,6 @@ func _process(_delta):
 						sprite.play("aberta")
 						collision_shape.disabled = true
 		3:
-			$lever/AnimatedSprite2D.play("default")
-			$lever2/AnimatedSprite2D.play("default")
-			$lever4/AnimatedSprite2D.play("default")
 			for i in range(1, 17):
 				var door_path = "door" + str(i)
 				var door = get_node_or_null(door_path)
@@ -78,9 +202,6 @@ func _process(_delta):
 						sprite.play("aberta")
 						collision_shape.disabled = true
 		4:
-			$lever/AnimatedSprite2D.play("default")
-			$lever2/AnimatedSprite2D.play("default")
-			$lever3/AnimatedSprite2D.play("default")
 			for i in range(1, 17):
 				var door_path = "door" + str(i)
 				var door = get_node_or_null(door_path)
@@ -135,7 +256,6 @@ func _on_area_2d_5_body_entered(body):
 	if "player" in body.get_groups() and not false in Global.areas_passed:
 		Global.opened_doors[0] = true
 		Global.opened_doors[1] = true
-
 
 func _on_timer_timeout():
 	if Global.player_position.y < $door5.global_position.y:

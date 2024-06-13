@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bhp88rj8b78ho" path="res://Scenes/player_2.tscn" id="3_sqb87"]
 [ext_resource type="Script" path="res://scripts/doorp1_fase2.gd" id="4_rs2gs"]
 [ext_resource type="PackedScene" uid="uid://befgfpyfnpsmc" path="res://Scenes/lever.tscn" id="7_561q7"]
-[ext_resource type="Script" path="res://scripts/lever1_fase2gd.gd" id="8_4230b"]
 [ext_resource type="Script" path="res://scripts/lever2_fase2.gd" id="9_wexhc"]
 [ext_resource type="Script" path="res://scripts/lever3_fase2.gd" id="10_1xyos"]
+[ext_resource type="Script" path="res://scripts/lever1_fase2gd.gd" id="10_32njj"]
 [ext_resource type="Script" path="res://scripts/lever4_fase2.gd" id="11_b1qpu"]
 [ext_resource type="PackedScene" uid="uid://d3gkqyeu02yaa" path="res://Scenes/placa.tscn" id="14_od6wg"]
 
@@ -263,9 +263,9 @@ texture = ExtResource("3_ay6mm")
 
 [node name="lever" parent="." instance=ExtResource("7_561q7")]
 show_behind_parent = true
-position = Vector2(145, 1876)
+position = Vector2(154, 1876)
 gravity_scale = 0.0
-script = ExtResource("8_4230b")
+script = ExtResource("10_32njj")
 
 [node name="lever2" parent="." instance=ExtResource("7_561q7")]
 show_behind_parent = true
@@ -286,94 +286,78 @@ gravity_scale = 0.0
 script = ExtResource("11_b1qpu")
 
 [node name="door1" parent="." instance=ExtResource("2_vp1or")]
-top_level = true
 position = Vector2(177.5, 49)
 rotation = 1.5708
 script = null
 
 [node name="door2" parent="." instance=ExtResource("2_vp1or")]
-top_level = true
 position = Vector2(177.5, 160)
 rotation = 1.5708
 script = null
 
 [node name="door3" parent="." instance=ExtResource("2_vp1or")]
-top_level = true
 position = Vector2(177.5, 271)
 rotation = 1.5708
 script = null
 
 [node name="door4" parent="." instance=ExtResource("2_vp1or")]
-top_level = true
 position = Vector2(177.5, 384)
 rotation = 1.5708
 script = null
 
 [node name="door5" parent="." instance=ExtResource("2_vp1or")]
-top_level = true
 position = Vector2(273, 94.5)
 script = null
 
 [node name="door6" parent="." instance=ExtResource("2_vp1or")]
-top_level = true
 position = Vector2(273, 206)
 script = null
 
 [node name="door7" parent="." instance=ExtResource("2_vp1or")]
-top_level = true
 position = Vector2(344, 49)
 rotation = 1.5708
 script = null
 
 [node name="door8" parent="." instance=ExtResource("2_vp1or")]
-top_level = true
 position = Vector2(509, 49)
 rotation = 1.5708
 script = null
 
 [node name="door9" parent="." instance=ExtResource("2_vp1or")]
-top_level = true
 position = Vector2(432, 207)
 script = null
 
 [node name="door10" parent="." instance=ExtResource("2_vp1or")]
-top_level = true
 position = Vector2(345, 160)
 rotation = 1.5708
 script = null
 
 [node name="door11" parent="." instance=ExtResource("2_vp1or")]
-top_level = true
 position = Vector2(512, 161)
 rotation = 1.5708
 script = null
 
 [node name="door12" parent="." instance=ExtResource("2_vp1or")]
-top_level = true
 position = Vector2(347, 271)
 rotation = 1.5708
 script = null
 
 [node name="door13" parent="." instance=ExtResource("2_vp1or")]
-top_level = true
 position = Vector2(347, 384)
 rotation = 1.5708
 script = null
 
 [node name="door14" parent="." instance=ExtResource("2_vp1or")]
-top_level = true
 position = Vector2(520, 385)
 rotation = 1.5708
 script = null
 
 [node name="door15" parent="." instance=ExtResource("2_vp1or")]
-top_level = true
 position = Vector2(516, 274)
 rotation = 1.5708
 script = null
 
 [node name="door16" parent="." instance=ExtResource("2_vp1or")]
-top_level = true
 position = Vector2(430, 320)
 script = null
 
@@ -412,7 +396,7 @@ show_behind_parent = true
 position = Vector2(315, 1847)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.0
 autostart = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
