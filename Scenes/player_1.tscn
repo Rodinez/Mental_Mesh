@@ -48,6 +48,7 @@ animations = [{
 size = Vector2(26, 15)
 
 [node name="P1" type="RigidBody2D" groups=["player"]]
+gravity_scale = 0.0
 script = ExtResource("1_3pc07")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
