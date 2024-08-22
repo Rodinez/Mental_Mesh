@@ -563,7 +563,7 @@ layer_59/tile_data = PackedInt32Array(1245221, 524290, 0, 1310757, 524290, 1, 13
 position = Vector2(352, 103)
 
 [node name="P2" parent="." instance=ExtResource("4_cisen")]
-position = Vector2(469.159, 1299.44)
+position = Vector2(409.159, 1299.44)
 
 [node name="Porta1" parent="." instance=ExtResource("6_t0crs")]
 position = Vector2(689.5, 224)
