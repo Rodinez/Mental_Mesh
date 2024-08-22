@@ -566,11 +566,11 @@ position = Vector2(352, 103)
 position = Vector2(469.159, 1299.44)
 
 [node name="Porta1" parent="." instance=ExtResource("6_t0crs")]
-position = Vector2(690, 224)
+position = Vector2(689.5, 224)
 rotation = 1.5708
 
 [node name="Porta2" parent="." instance=ExtResource("6_t0crs")]
-position = Vector2(656, 1296)
+position = Vector2(657.45, 1296)
 rotation = 1.5708
 
 [node name="Background" type="Sprite2D" parent="."]
