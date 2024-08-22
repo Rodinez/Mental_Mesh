@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 @export var speed = 400 
+@onready var camera = $Camera2D
 var screen_size
 
 # Called when the node enters the scene tree for the first time.
@@ -9,6 +10,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Global.fase == 2:
+		camera.zoom = Vector2(1.5,1.5)
+	else:
+		camera.zoom = Vector2(3,3)
 	if Global.can_move and Global.player_now == 1:
 		$Camera2D.enabled = true
 		Global.player_position = self.global_position

@@ -6,6 +6,7 @@ func _ready():
 	Global.player_paper = 2
 	Global.player_door = 1
 	Global.leave = [0, 0]
+	Global.fase = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
