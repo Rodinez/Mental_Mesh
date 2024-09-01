@@ -11,6 +11,7 @@ func _process(_delta):
 		$Control.global_position = Global.player_position + Vector2(-30, -70)
 		if player_nearby and Input.is_action_just_pressed("interact"):
 			detailed_view()
+			Global.sound_fase1[2] = true
 
 func _on_area_2d_body_entered(body):
 	if "player" in body.get_groups():
@@ -28,3 +29,5 @@ func detailed_view():
 
 func _on_timer_timeout():
 	$Control.visible = false
+	Global.sound_fase1[2] = false
+	Global.sound_fase1[3] = true

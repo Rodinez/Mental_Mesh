@@ -160,6 +160,8 @@ func _process(_delta):
 			if try != Global.password:
 				try = Global.password
 				Global.tween = 1
+				$door_sound.play()
+				$lever_sound.play()
 			for i in range(1, 17):
 				var door_path = "door" + str(i)
 				var door = get_node_or_null(door_path)
@@ -179,6 +181,8 @@ func _process(_delta):
 			if try != Global.password:
 				try = Global.password
 				Global.tween = 1
+				$door_sound.play()
+				$lever_sound.play()
 			for i in range(1, 17):
 				var door_path = "door" + str(i)
 				var door = get_node_or_null(door_path)
@@ -198,6 +202,8 @@ func _process(_delta):
 			if try != Global.password:
 				try = Global.password
 				Global.tween = 1
+				$door_sound.play()
+				$lever_sound.play()
 			for i in range(1, 17):
 				var door_path = "door" + str(i)
 				var door = get_node_or_null(door_path)
@@ -217,6 +223,8 @@ func _process(_delta):
 			if try != Global.password:
 				try = Global.password
 				Global.tween = 1
+				$door_sound.play()
+				$lever_sound.play()
 			for i in range(1, 17):
 				var door_path = "door" + str(i)
 				var door = get_node_or_null(door_path)
@@ -246,11 +254,13 @@ func _process(_delta):
 		$P1/Camera2D.enabled = false
 		$P1.queue_free()
 		Global.leave[0] = 2
+		$trapdoor_sound.play()
 	if Global.leave[1] == 1:
 		Global.player_now = 1
 		$P2/Camera2D.enabled = false
 		$P2.queue_free()
 		Global.leave[1] = 2
+		$trapdoor_sound.play()
 	if Global.leave[0] == 2 and Global.leave[1] == 2:
 		get_tree().change_scene_to_file("res://Scenes/fase_3.tscn")
 
@@ -259,29 +269,34 @@ func _on_area_2d_2_body_entered(body):
 		Global.areas_passed[0] = true
 		$TileMap.set_layer_enabled(4,false)
 		$TileMap.set_layer_enabled(8,true)
+		$pressure_sound.play()
 
 func _on_area_2d_3_body_entered(body):
 	if "player" in body.get_groups():
 		Global.areas_passed[1] = true
 		$TileMap.set_layer_enabled(5,false)
 		$TileMap.set_layer_enabled(9,true)
+		$pressure_sound.play()
 
 func _on_area_2d_4_body_entered(body):
 	if "player" in body.get_groups():
 		Global.areas_passed[2] = true
 		$TileMap.set_layer_enabled(6,false)
 		$TileMap.set_layer_enabled(10,true)
+		$pressure_sound.play()
 
 func _on_area_2d_body_entered(body):
 	if "player" in body.get_groups():
 		Global.areas_passed[3] = true
 		$TileMap.set_layer_enabled(3,false)
 		$TileMap.set_layer_enabled(7,true)
+		$pressure_sound.play()
 
 func _on_area_2d_5_body_entered(body):
 	if "player" in body.get_groups() and not false in Global.areas_passed:
 		Global.opened_doors[0] = true
 		Global.opened_doors[1] = true
+		$door_sound.play()
 
 func _on_timer_timeout():
 	if Global.player_position.y < $door5.global_position.y:

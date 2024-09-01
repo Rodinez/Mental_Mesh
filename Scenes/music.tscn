@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dym2i6j3k1dn8"]
+
+[ext_resource type="AudioStream" uid="uid://q30qt0bna3d4" path="res://sounds/music/Cyberpunk Moonlight Sonata.mp3" id="1_u5dkh"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_u5dkh")
+volume_db = -30.0
+pitch_scale = 0.9
+autoplay = true

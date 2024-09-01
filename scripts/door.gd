@@ -16,5 +16,6 @@ func _process(_delta):
 		else:
 			self.top_level = false
 	else:
+		Global.sound_fase1[1] = false
 		$AnimatedSprite2D.play("default")
 		$CollisionShape2D.disabled = false

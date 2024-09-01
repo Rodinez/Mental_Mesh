@@ -11,6 +11,7 @@ func _ready():
 func _process(_delta):
 	if Global.player_door == Global.player_now:
 		if player_nearby and Input.is_action_just_pressed("interact"):
+			Global.sound_fase1[4] = true
 			if !Global.opened_doors[1]:
 				Global.opened_doors[1] = true
 				$AnimatedSprite2D.play("dir_int")

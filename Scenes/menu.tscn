@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c44iw7d5cc6gp"]
+[gd_scene load_steps=3 format=3 uid="uid://c44iw7d5cc6gp"]
 
 [ext_resource type="Script" path="res://scripts/start.gd" id="1_0hdnc"]
+[ext_resource type="AudioStream" uid="uid://q30qt0bna3d4" path="res://sounds/music/Cyberpunk Moonlight Sonata.mp3" id="2_o6rnm"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -29,6 +30,11 @@ layout_mode = 2
 text = "
 Quit
  "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_o6rnm")
+volume_db = -10.0
+pitch_scale = 0.9
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/start" to="VBoxContainer/start" method="_on_pressed"]

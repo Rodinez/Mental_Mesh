@@ -1,5 +1,6 @@
 extends Node
 @onready var player_position
+var sound_fase1 = [false, false, false, true, false]
 var recent_change = 0 
 var player_now = 1
 var max_players = 2

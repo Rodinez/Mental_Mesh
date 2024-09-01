@@ -36,35 +36,41 @@ func _process(_delta):
 		paper_read[0] = !paper_read[0]
 		if(paper_read[0]):
 			$Node2D/Control.visible = true
+			$paper_sound.play()
 		else:
 			$Node2D/Control.visible = false
 	if($Node2D2.player_nearby and Input.is_action_just_pressed("interact") and Global.player_now == 2):
 		paper_read[1] = !paper_read[1]
 		if(paper_read[1]):
 			$Node2D2/Control.visible = true
+			$paper_sound.play()
 		else:
 			$Node2D2/Control.visible = false
 	if($Node2D3.player_nearby and Input.is_action_just_pressed("interact") and Global.player_now == 2):
 		paper_read[2] = !paper_read[2]
 		if(paper_read[2]):
 			$Node2D3/Control.visible = true
+			$paper_sound.play()
 		else:
 			$Node2D3/Control.visible = false
 	if($Node2D4.player_nearby and Input.is_action_just_pressed("interact") and Global.player_now == 2):
 		paper_read[3] = !paper_read[3]
 		if(paper_read[3]):
 			$Node2D4/Control.visible = true
+			$paper_sound.play()
 		else:
 			$Node2D4/Control.visible = false
 	if($Node2D5.player_nearby and Input.is_action_just_pressed("interact") and Global.player_now == 2):
 		paper_read[4] = !paper_read[4]
 		if(paper_read[4]):
 			$Node2D5/Control.visible = true
+			$paper_sound.play()
 		else:
 			$Node2D5/Control.visible = false
 	if not false in floor_passed:
 		Global.opened_doors[0] = true
 		Global.opened_doors[1] = true
+		$door_sound.play()
 	if Global.opened_doors[0]:
 		$TileMap.set_layer_enabled(1,true)
 		$trapdoor_p1.visible = true
@@ -79,11 +85,13 @@ func _process(_delta):
 		$P1/Camera2D.enabled = false
 		$P1.queue_free()
 		Global.leave[0] = 2
+		$trapdoor_sound.play()
 	if Global.leave[1] == 1:
 		Global.player_now = 1
 		$P2/Camera2D.enabled = false
 		$P2.queue_free()
 		Global.leave[1] = 2
+		$trapdoor_sound.play()
 	if Global.leave[0] == 2 and Global.leave[1] == 2:
 		get_tree().change_scene_to_file("res://Scenes/end.tscn")
 
@@ -92,6 +100,7 @@ func _on_area_2d_body_entered(_body):
 		$TileMap.set_layer_enabled(3,false)
 		$TileMap.set_layer_enabled(4,true)
 		floor_passed[0] = true
+		$right.play()
 
 func _on_area_2d_2_body_entered(_body):
 	if !floor_passed[1] and !lost:
@@ -99,10 +108,12 @@ func _on_area_2d_2_body_entered(_body):
 			$TileMap.set_layer_enabled(6,false)
 			$TileMap.set_layer_enabled(7,true)
 			floor_passed[1] = true
+			$right.play()
 		else:
 			$TileMap.set_layer_enabled(6,false)
 			$TileMap.set_layer_enabled(8,true)
 			reset()
+			$wrong.play()
 
 func _on_area_2d_3_body_entered(_body):
 	if !floor_passed[12] and !lost:
@@ -110,10 +121,12 @@ func _on_area_2d_3_body_entered(_body):
 				$TileMap.set_layer_enabled(9,false)
 				$TileMap.set_layer_enabled(10,true)
 				floor_passed[12] = true
+				$right.play()
 			else:
 				$TileMap.set_layer_enabled(9,false)
 				$TileMap.set_layer_enabled(11,true)
 				reset()
+				$wrong.play()
 
 func _on_area_2d_4_body_entered(_body):
 	if !floor_passed[18] and !lost:
@@ -121,10 +134,12 @@ func _on_area_2d_4_body_entered(_body):
 				$TileMap.set_layer_enabled(12,false)
 				$TileMap.set_layer_enabled(13,true)
 				floor_passed[18] = true
+				$right.play()
 			else:
 				$TileMap.set_layer_enabled(12,false)
 				$TileMap.set_layer_enabled(14,true)
 				reset()
+				$wrong.play()
 
 func _on_area_2d_5_body_entered(_body):
 	if !floor_passed[16] and !lost:
@@ -132,10 +147,12 @@ func _on_area_2d_5_body_entered(_body):
 				$TileMap.set_layer_enabled(15,false)
 				$TileMap.set_layer_enabled(16,true)
 				floor_passed[16] = true
+				$right.play()
 			else:
 				$TileMap.set_layer_enabled(15,false)
 				$TileMap.set_layer_enabled(17,true)
 				reset()
+				$wrong.play()
 
 func _on_area_2d_6_body_entered(_body):
 	if !floor_passed[13] and !lost:
@@ -143,10 +160,12 @@ func _on_area_2d_6_body_entered(_body):
 				$TileMap.set_layer_enabled(18,false)
 				$TileMap.set_layer_enabled(19,true)
 				floor_passed[13] = true
+				$right.play()
 			else:
 				$TileMap.set_layer_enabled(18,false)
 				$TileMap.set_layer_enabled(20,true)
 				reset()
+				$wrong.play()
 
 func _on_area_2d_7_body_entered(_body):
 	if !floor_passed[2] and !lost:
@@ -154,10 +173,12 @@ func _on_area_2d_7_body_entered(_body):
 			$TileMap.set_layer_enabled(21,false)
 			$TileMap.set_layer_enabled(22,true)
 			floor_passed[2] = true
+			$right.play()
 		else:
 			$TileMap.set_layer_enabled(21,false)
 			$TileMap.set_layer_enabled(23,true)
 			reset()
+			$wrong.play()
 
 func _on_area_2d_8_body_entered(_body):
 	if !floor_passed[11] and !lost:
@@ -165,10 +186,12 @@ func _on_area_2d_8_body_entered(_body):
 				$TileMap.set_layer_enabled(24,false)
 				$TileMap.set_layer_enabled(25,true)
 				floor_passed[11] = true
+				$right.play()
 			else:
 				$TileMap.set_layer_enabled(24,false)
 				$TileMap.set_layer_enabled(26,true)
 				reset()
+				$wrong.play()
 
 func _on_area_2d_9_body_entered(_body):
 	if !floor_passed[17] and !lost:
@@ -176,10 +199,12 @@ func _on_area_2d_9_body_entered(_body):
 				$TileMap.set_layer_enabled(27,false)
 				$TileMap.set_layer_enabled(28,true)
 				floor_passed[17] = true
+				$right.play()
 			else:
 				$TileMap.set_layer_enabled(27,false)
 				$TileMap.set_layer_enabled(29,true)
 				reset()
+				$wrong.play()
 
 func _on_area_2d_10_body_entered(_body):
 	if !floor_passed[14] and !lost:
@@ -187,10 +212,12 @@ func _on_area_2d_10_body_entered(_body):
 				$TileMap.set_layer_enabled(42,false)
 				$TileMap.set_layer_enabled(43,true)
 				floor_passed[14] = true
+				$right.play()
 			else:
 				$TileMap.set_layer_enabled(42,false)
 				$TileMap.set_layer_enabled(44,true)
 				reset()
+				$wrong.play()
 
 func _on_area_2d_11_body_entered(_body):
 	if !floor_passed[10] and !lost:
@@ -198,10 +225,12 @@ func _on_area_2d_11_body_entered(_body):
 				$TileMap.set_layer_enabled(39,false)
 				$TileMap.set_layer_enabled(40,true)
 				floor_passed[10] = true
+				$right.play()
 			else:
 				$TileMap.set_layer_enabled(39,false)
 				$TileMap.set_layer_enabled(41,true)
 				reset()
+				$wrong.play()
 
 func _on_area_2d_12_body_entered(_body):
 	if !floor_passed[3] and !lost:
@@ -209,10 +238,12 @@ func _on_area_2d_12_body_entered(_body):
 			$TileMap.set_layer_enabled(36,false)
 			$TileMap.set_layer_enabled(37,true)
 			floor_passed[3] = true
+			$right.play()
 		else:
 			$TileMap.set_layer_enabled(36,false)
 			$TileMap.set_layer_enabled(38,true)
 			reset()
+			$wrong.play()
 
 func _on_area_2d_13_body_entered(_body):
 	if !floor_passed[4] and !lost:
@@ -220,10 +251,12 @@ func _on_area_2d_13_body_entered(_body):
 			$TileMap.set_layer_enabled(33,false)
 			$TileMap.set_layer_enabled(34,true)
 			floor_passed[4] = true
+			$right.play()
 		else:
 			$TileMap.set_layer_enabled(33,false)
 			$TileMap.set_layer_enabled(35,true)
 			reset()
+			$wrong.play()
 
 func _on_area_2d_14_body_entered(_body):
 	if !floor_passed[5] and !lost:
@@ -231,10 +264,12 @@ func _on_area_2d_14_body_entered(_body):
 			$TileMap.set_layer_enabled(30,false)
 			$TileMap.set_layer_enabled(31,true)
 			floor_passed[5] = true
+			$right.play()
 		else:
 			$TileMap.set_layer_enabled(30,false)
 			$TileMap.set_layer_enabled(32,true)
 			reset()
+			$wrong.play()
 
 func _on_area_2d_15_body_entered(_body):
 	if !floor_passed[15] and !lost:
@@ -242,10 +277,12 @@ func _on_area_2d_15_body_entered(_body):
 			$TileMap.set_layer_enabled(45,false)
 			$TileMap.set_layer_enabled(46,true)
 			floor_passed[15] = true
+			$right.play()
 		else:
 			$TileMap.set_layer_enabled(45,false)
 			$TileMap.set_layer_enabled(47,true)
 			reset()
+			$wrong.play()
 
 func _on_area_2d_16_body_entered(_body):
 	if !floor_passed[6] and !lost:
@@ -253,10 +290,12 @@ func _on_area_2d_16_body_entered(_body):
 			$TileMap.set_layer_enabled(48,false)
 			$TileMap.set_layer_enabled(49,true)
 			floor_passed[6] = true
+			$right.play()
 		else:
 			$TileMap.set_layer_enabled(48,false)
 			$TileMap.set_layer_enabled(50,true)
 			reset()
+			$wrong.play()
 
 func _on_area_2d_17_body_entered(_body):
 		if !floor_passed[7] and !lost:
@@ -264,10 +303,12 @@ func _on_area_2d_17_body_entered(_body):
 				$TileMap.set_layer_enabled(51,false)
 				$TileMap.set_layer_enabled(52,true)
 				floor_passed[7] = true
+				$right.play()
 			else:
 				$TileMap.set_layer_enabled(51,false)
 				$TileMap.set_layer_enabled(53,true)
 				reset()
+				$wrong.play()
 
 func _on_area_2d_18_body_entered(_body):
 		if !floor_passed[8] and !lost:
@@ -275,10 +316,12 @@ func _on_area_2d_18_body_entered(_body):
 				$TileMap.set_layer_enabled(54,false)
 				$TileMap.set_layer_enabled(55,true)
 				floor_passed[8] = true
+				$right.play()
 			else:
 				$TileMap.set_layer_enabled(54,false)
 				$TileMap.set_layer_enabled(56,true)
 				reset()
+				$wrong.play()
 
 func _on_area_2d_19_body_entered(_body):
 	if !floor_passed[9] and !lost:
@@ -286,10 +329,12 @@ func _on_area_2d_19_body_entered(_body):
 				$TileMap.set_layer_enabled(57,false)
 				$TileMap.set_layer_enabled(58,true)
 				floor_passed[9] = true
+				$right.play()
 			else:
 				$TileMap.set_layer_enabled(57,false)
 				$TileMap.set_layer_enabled(59,true)
 				reset()
+				$wrong.play()
 
 func reset():
 	lost = true

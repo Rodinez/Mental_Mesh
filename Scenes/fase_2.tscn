@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://hbj17htdb4l7"]
+[gd_scene load_steps=29 format=3 uid="uid://hbj17htdb4l7"]
 
 [ext_resource type="Script" path="res://scripts/fase_2.gd" id="1_kct2v"]
 [ext_resource type="PackedScene" uid="uid://dbwddd7368ydk" path="res://Scenes/door1_fase2.tscn" id="2_8gjji"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c5dk62d6u1ptp" path="res://sprites/tilemap/ambiente.png" id="2_ybqn6"]
 [ext_resource type="Texture2D" uid="uid://b3v54x5lknmbw" path="res://sprites/background.jpg" id="3_ay6mm"]
 [ext_resource type="PackedScene" uid="uid://bhp88rj8b78ho" path="res://Scenes/player_2.tscn" id="3_sqb87"]
-[ext_resource type="Script" path="res://scripts/doorp1_fase2.gd" id="4_rs2gs"]
+[ext_resource type="Script" path="res://scripts/doorp1_fase2.gd" id="4_p3xvs"]
 [ext_resource type="PackedScene" uid="uid://befgfpyfnpsmc" path="res://Scenes/lever.tscn" id="7_561q7"]
 [ext_resource type="Script" path="res://scripts/lever2_fase2.gd" id="9_wexhc"]
 [ext_resource type="Script" path="res://scripts/lever3_fase2.gd" id="10_1xyos"]
@@ -18,6 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://vydiw5vmpmsx" path="res://Scenes/door2_fase2.tscn" id="16_8bmt6"]
 [ext_resource type="PackedScene" uid="uid://cw5bpmq6hopys" path="res://Scenes/door4_fase2.tscn" id="17_e7gr2"]
 [ext_resource type="PackedScene" uid="uid://ue7dvtfasne7" path="res://Scenes/door3_fase2.tscn" id="17_r5u2f"]
+[ext_resource type="AudioStream" uid="uid://c7otfcpdvg28p" path="res://sounds/sound_effects/stone_door.ogg" id="18_gry4u"]
+[ext_resource type="AudioStream" uid="uid://c6dsduxh1fs34" path="res://sounds/sound_effects/stairs.ogg" id="19_n8wsq"]
+[ext_resource type="AudioStream" uid="uid://qro8l6xv0gjd" path="res://sounds/sound_effects/lever.wav" id="20_hx43h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8m42y"]
 texture = ExtResource("2_ybqn6")
@@ -228,7 +231,7 @@ gravity_scale = 0.0
 [node name="door_p1" parent="." instance=ExtResource("2_vp1or")]
 position = Vector2(14.5, 224)
 rotation = -1.5708
-script = ExtResource("4_rs2gs")
+script = ExtResource("4_p3xvs")
 
 [node name="door_p2" parent="." instance=ExtResource("2_vp1or")]
 position = Vector2(579, 1951)
@@ -412,6 +415,25 @@ position = Vector2(315, 1847)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="door_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_gry4u")
+volume_db = -10.0
+pitch_scale = 2.0
+
+[node name="trapdoor_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_n8wsq")
+volume_db = -5.0
+attenuation = 8.63161e-05
+
+[node name="lever_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_hx43h")
+volume_db = -10.0
+
+[node name="pressure_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_hx43h")
+volume_db = -10.0
+pitch_scale = 2.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

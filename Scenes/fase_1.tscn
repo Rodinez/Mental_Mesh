@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://r66qgsd88i00"]
+[gd_scene load_steps=20 format=3 uid="uid://r66qgsd88i00"]
 
 [ext_resource type="Script" path="res://scripts/fase_1.gd" id="1_rht4d"]
 [ext_resource type="Texture2D" uid="uid://b3v54x5lknmbw" path="res://sprites/background.jpg" id="2_fq0v3"]
@@ -12,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://befgfpyfnpsmc" path="res://Scenes/lever.tscn" id="9_6bvb7"]
 [ext_resource type="Script" path="res://scripts/papel.gd" id="10_6wi4x"]
 [ext_resource type="PackedScene" uid="uid://bkq5dh3k3rwat" path="res://Scenes/trapdor.tscn" id="10_lekia"]
+[ext_resource type="AudioStream" uid="uid://c7otfcpdvg28p" path="res://sounds/sound_effects/stone_door.ogg" id="13_m5r3q"]
+[ext_resource type="AudioStream" uid="uid://c6dsduxh1fs34" path="res://sounds/sound_effects/stairs.ogg" id="14_ukt8k"]
+[ext_resource type="AudioStream" uid="uid://bu554ky4qjevp" path="res://sounds/sound_effects/paper.wav" id="15_g2lay"]
+[ext_resource type="AudioStream" uid="uid://qro8l6xv0gjd" path="res://sounds/sound_effects/lever.wav" id="16_42ag5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f5vg6"]
 texture = ExtResource("2_xjaec")
@@ -318,3 +322,21 @@ gravity_scale = 0.0
 visible = false
 position = Vector2(996, 224)
 gravity_scale = 0.0
+
+[node name="door_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_m5r3q")
+volume_db = -10.0
+pitch_scale = 2.0
+
+[node name="trapdoor_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_ukt8k")
+volume_db = -5.0
+attenuation = 2.39435e-05
+
+[node name="paper_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_g2lay")
+volume_db = -20.0
+
+[node name="lever_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_42ag5")
+volume_db = -10.0
