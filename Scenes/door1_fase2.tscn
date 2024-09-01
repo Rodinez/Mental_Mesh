@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbwddd7368ydk"]
+
+[ext_resource type="Texture2D" uid="uid://cgq20d3tgjrt6" path="res://sprites/interativos/porta_aberta.png" id="2_xxy4r"]
+[ext_resource type="Texture2D" uid="uid://dnq47vnciq40l" path="res://sprites/interativos/porta1-fase2.png" id="3_jh6xp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tf75r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xxy4r")
+}],
+"loop": true,
+"name": &"aberta",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jh6xp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gdqn"]
+size = Vector2(46.5, 51)
+
+[node name="Node2D" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.35, 1.05)
+sprite_frames = SubResource("SpriteFrames_tf75r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.44349e-05, 10.25)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_4gdqn")

@@ -1,6 +1,8 @@
 extends Node2D
 
 var current_doors = 0
+var be_tween = false
+var try = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -155,6 +157,9 @@ func _process(_delta):
 		get_tree().reload_current_scene()
 	match Global.password:
 		1:
+			if try != Global.password:
+				try = Global.password
+				Global.tween = 1
 			for i in range(1, 17):
 				var door_path = "door" + str(i)
 				var door = get_node_or_null(door_path)
@@ -171,6 +176,9 @@ func _process(_delta):
 						sprite.play("aberta")
 						collision_shape.disabled = true
 		2:
+			if try != Global.password:
+				try = Global.password
+				Global.tween = 1
 			for i in range(1, 17):
 				var door_path = "door" + str(i)
 				var door = get_node_or_null(door_path)
@@ -187,6 +195,9 @@ func _process(_delta):
 						sprite.play("aberta")
 						collision_shape.disabled = true
 		3:
+			if try != Global.password:
+				try = Global.password
+				Global.tween = 1
 			for i in range(1, 17):
 				var door_path = "door" + str(i)
 				var door = get_node_or_null(door_path)
@@ -203,6 +214,9 @@ func _process(_delta):
 						sprite.play("aberta")
 						collision_shape.disabled = true
 		4:
+			if try != Global.password:
+				try = Global.password
+				Global.tween = 1
 			for i in range(1, 17):
 				var door_path = "door" + str(i)
 				var door = get_node_or_null(door_path)
@@ -224,6 +238,9 @@ func _process(_delta):
 	if Global.opened_doors[1]:
 		$TileMap.set_layer_enabled(2,true)
 		$trapdoor_p2.visible = true
+	if Global.opened_doors[0] and Global.opened_doors[1] and not be_tween:
+		be_tween = true
+		Global.tween = 1
 	if Global.leave[0] == 1:
 		Global.player_now = 2
 		$P1/Camera2D.enabled = false

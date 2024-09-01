@@ -1,14 +1,11 @@
 extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
+ 
 func _ready():
 	Global.player_paper = 2
 	Global.player_door = 1
 	Global.leave = [0, 0]
 	Global.fase = 1
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Global.opened_doors[0]:
 		$TileMap.set_layer_enabled(1,true)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://hbj17htdb4l7"]
+[gd_scene load_steps=26 format=3 uid="uid://hbj17htdb4l7"]
 
 [ext_resource type="Script" path="res://scripts/fase_2.gd" id="1_kct2v"]
+[ext_resource type="PackedScene" uid="uid://dbwddd7368ydk" path="res://Scenes/door1_fase2.tscn" id="2_8gjji"]
 [ext_resource type="PackedScene" uid="uid://chv4a2ho4hnwf" path="res://Scenes/player_1.tscn" id="2_lhym8"]
 [ext_resource type="PackedScene" uid="uid://bkq5dh3k3rwat" path="res://Scenes/trapdor.tscn" id="2_spo78"]
 [ext_resource type="PackedScene" uid="uid://c31h4mmolm8en" path="res://Scenes/door.tscn" id="2_vp1or"]
@@ -14,6 +15,9 @@
 [ext_resource type="Script" path="res://scripts/lever1_fase2gd.gd" id="10_32njj"]
 [ext_resource type="Script" path="res://scripts/lever4_fase2.gd" id="11_b1qpu"]
 [ext_resource type="PackedScene" uid="uid://d3gkqyeu02yaa" path="res://Scenes/placa.tscn" id="14_od6wg"]
+[ext_resource type="PackedScene" uid="uid://vydiw5vmpmsx" path="res://Scenes/door2_fase2.tscn" id="16_8bmt6"]
+[ext_resource type="PackedScene" uid="uid://cw5bpmq6hopys" path="res://Scenes/door4_fase2.tscn" id="17_e7gr2"]
+[ext_resource type="PackedScene" uid="uid://ue7dvtfasne7" path="res://Scenes/door3_fase2.tscn" id="17_r5u2f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8m42y"]
 texture = ExtResource("2_ybqn6")
@@ -311,81 +315,65 @@ position = Vector2(490, 1876)
 gravity_scale = 0.0
 script = ExtResource("11_b1qpu")
 
-[node name="door1" parent="." instance=ExtResource("2_vp1or")]
+[node name="door1" parent="." instance=ExtResource("2_8gjji")]
 position = Vector2(177.5, 49)
 rotation = 1.5708
-script = null
 
-[node name="door2" parent="." instance=ExtResource("2_vp1or")]
+[node name="door2" parent="." instance=ExtResource("16_8bmt6")]
 position = Vector2(177.5, 160)
 rotation = 1.5708
-script = null
 
-[node name="door3" parent="." instance=ExtResource("2_vp1or")]
+[node name="door3" parent="." instance=ExtResource("17_r5u2f")]
 position = Vector2(177.5, 271)
 rotation = 1.5708
-script = null
 
-[node name="door4" parent="." instance=ExtResource("2_vp1or")]
+[node name="door4" parent="." instance=ExtResource("17_e7gr2")]
 position = Vector2(177.5, 384)
 rotation = 1.5708
-script = null
 
-[node name="door5" parent="." instance=ExtResource("2_vp1or")]
+[node name="door5" parent="." instance=ExtResource("16_8bmt6")]
 position = Vector2(273, 94.5)
-script = null
 
-[node name="door6" parent="." instance=ExtResource("2_vp1or")]
+[node name="door6" parent="." instance=ExtResource("17_e7gr2")]
 position = Vector2(273, 206)
-script = null
 
-[node name="door7" parent="." instance=ExtResource("2_vp1or")]
+[node name="door7" parent="." instance=ExtResource("17_e7gr2")]
 position = Vector2(344, 49)
 rotation = 1.5708
-script = null
 
-[node name="door8" parent="." instance=ExtResource("2_vp1or")]
+[node name="door8" parent="." instance=ExtResource("17_e7gr2")]
 position = Vector2(509, 49)
 rotation = 1.5708
-script = null
 
-[node name="door9" parent="." instance=ExtResource("2_vp1or")]
+[node name="door9" parent="." instance=ExtResource("2_8gjji")]
 position = Vector2(432, 207)
-script = null
 
-[node name="door10" parent="." instance=ExtResource("2_vp1or")]
-position = Vector2(345, 160)
-rotation = 1.5708
-script = null
-
-[node name="door11" parent="." instance=ExtResource("2_vp1or")]
-position = Vector2(512, 161)
-rotation = 1.5708
-script = null
-
-[node name="door12" parent="." instance=ExtResource("2_vp1or")]
-position = Vector2(347, 271)
-rotation = 1.5708
-script = null
-
-[node name="door13" parent="." instance=ExtResource("2_vp1or")]
-position = Vector2(347, 384)
-rotation = 1.5708
-script = null
-
-[node name="door14" parent="." instance=ExtResource("2_vp1or")]
+[node name="door10" parent="." instance=ExtResource("2_8gjji")]
 position = Vector2(520, 385)
 rotation = 1.5708
-script = null
 
-[node name="door15" parent="." instance=ExtResource("2_vp1or")]
+[node name="door11" parent="." instance=ExtResource("17_r5u2f")]
+position = Vector2(512, 161)
+rotation = 1.5708
+
+[node name="door12" parent="." instance=ExtResource("16_8bmt6")]
+position = Vector2(347, 271)
+rotation = 1.5708
+
+[node name="door13" parent="." instance=ExtResource("16_8bmt6")]
+position = Vector2(347, 384)
+rotation = 1.5708
+
+[node name="door14" parent="." instance=ExtResource("2_8gjji")]
+position = Vector2(345, 160)
+rotation = 1.5708
+
+[node name="door15" parent="." instance=ExtResource("17_r5u2f")]
 position = Vector2(516, 274)
 rotation = 1.5708
-script = null
 
-[node name="door16" parent="." instance=ExtResource("2_vp1or")]
+[node name="door16" parent="." instance=ExtResource("17_r5u2f")]
 position = Vector2(430, 320)
-script = null
 
 [node name="Area2D" type="Area2D" parent="."]
 

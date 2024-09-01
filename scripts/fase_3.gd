@@ -3,7 +3,7 @@ extends Node2D
 var lost = false
 var paper_read = [false,false,false,false,false]
 var floor_passed = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
-
+var be_tween = false
 
 func _ready():
 	Global.fase = 3
@@ -71,6 +71,9 @@ func _process(_delta):
 	if Global.opened_doors[1]:
 		$TileMap.set_layer_enabled(2,true)
 		$trapdoor_p2.visible = true
+	if Global.opened_doors[0] and Global.opened_doors[1] and not be_tween:
+		be_tween = true
+		Global.tween = 1
 	if Global.leave[0] == 1:
 		Global.player_now = 2
 		$P1/Camera2D.enabled = false
