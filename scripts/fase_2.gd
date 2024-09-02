@@ -266,31 +266,37 @@ func _process(_delta):
 
 func _on_area_2d_2_body_entered(body):
 	if "player" in body.get_groups():
+		if not Global.areas_passed[0]:
+			$pressure_sound.play()
 		Global.areas_passed[0] = true
 		$TileMap.set_layer_enabled(4,false)
 		$TileMap.set_layer_enabled(8,true)
-		$pressure_sound.play()
 
 func _on_area_2d_3_body_entered(body):
 	if "player" in body.get_groups():
+		if not Global.areas_passed[1]:
+			$pressure_sound.play()
 		Global.areas_passed[1] = true
 		$TileMap.set_layer_enabled(5,false)
 		$TileMap.set_layer_enabled(9,true)
-		$pressure_sound.play()
+
 
 func _on_area_2d_4_body_entered(body):
 	if "player" in body.get_groups():
+		if not Global.areas_passed[2]:
+			$pressure_sound.play()
 		Global.areas_passed[2] = true
 		$TileMap.set_layer_enabled(6,false)
 		$TileMap.set_layer_enabled(10,true)
-		$pressure_sound.play()
 
 func _on_area_2d_body_entered(body):
 	if "player" in body.get_groups():
+		if not Global.areas_passed[3]:
+			$pressure_sound.play()
 		Global.areas_passed[3] = true
 		$TileMap.set_layer_enabled(3,false)
 		$TileMap.set_layer_enabled(7,true)
-		$pressure_sound.play()
+
 
 func _on_area_2d_5_body_entered(body):
 	if "player" in body.get_groups() and not false in Global.areas_passed:
