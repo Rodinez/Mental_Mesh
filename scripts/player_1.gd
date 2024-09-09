@@ -18,6 +18,11 @@ func _process(delta):
 	else:
 		camera.zoom = Vector2(3,3)
 		
+	if Global.dead[1]:
+		$Camera2D.enabled = false
+		Global.recent_change = 1
+		Global.player_now += 1
+		
 	if Global.can_move and Global.player_now == 1:
 		$Camera2D.enabled = true
 		Global.player_position = self.global_position
@@ -34,7 +39,7 @@ func _process(delta):
 		if Input.is_action_pressed("move_up"):
 			velocity.y -= 1
 			$AnimatedSprite2D.play("costa")
-		if Input.is_action_just_released("change") and Global.leave[1] <= 0:
+		if (Input.is_action_just_released("change") and Global.leave[1] <= 0) or Global.dead[1]:
 			$Camera2D.enabled = false
 			Global.recent_change = 1
 			Global.player_now += 1
@@ -70,6 +75,7 @@ func _process(delta):
 		move_and_collide(velocity.normalized() * speed * delta)
 
 func dead():
+	$Camera2D.enabled = true
 	$AnimatedSprite2D.visible = false
 	$CollisionShape2D.disabled = true
 	$Area2D/CollisionShape2D.disabled = true
@@ -79,8 +85,8 @@ func _on_timer_timeout():
 	get_tree().reload_current_scene()
 
 func _on_area_2d_body_entered(body):
-	print(body.name)
 	if "saw" in body.name:
+		Global.dead[0] = true
 		var blood_instance = blood.instantiate()
 		blood_instance.global_position = global_position 
 		get_parent().add_child(blood_instance)
