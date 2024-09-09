@@ -93,7 +93,7 @@ func _process(_delta):
 		Global.leave[1] = 2
 		$trapdoor_sound.play()
 	if Global.leave[0] == 2 and Global.leave[1] == 2:
-		get_tree().change_scene_to_file("res://Scenes/end.tscn")
+		get_tree().change_scene_to_file("res://Scenes/fase_4.tscn")
 
 func _on_area_2d_body_entered(_body):
 	if not true in floor_passed and !lost:

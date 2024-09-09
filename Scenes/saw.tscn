@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://o0wcui2g5vw2"]
+
+[ext_resource type="Texture2D" uid="uid://bo3m5lt4owkgu" path="res://sprites/interativos/saw1.png" id="1_fvobx"]
+[ext_resource type="Texture2D" uid="uid://bou6huxfs0wrj" path="res://sprites/interativos/saw2.png" id="2_pixts"]
+[ext_resource type="Texture2D" uid="uid://dsbgntt5p6uvw" path="res://sprites/interativos/saw3.png" id="3_p64kc"]
+[ext_resource type="Texture2D" uid="uid://bv40jyf0c0kxb" path="res://sprites/interativos/saw4.png" id="4_pl85s"]
+[ext_resource type="Texture2D" uid="uid://cny3mjvq13aer" path="res://sprites/interativos/saw5.png" id="5_7n478"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bq6pi"]
+size = Vector2(38, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xs8v2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fvobx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pixts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p64kc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pl85s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7n478")
+}],
+"loop": true,
+"name": &"default",
+"speed": 120.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osi0k"]
+size = Vector2(48, 48)
+
+[node name="Node2D" type="RigidBody2D" groups=["enemy"]]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_bq6pi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_xs8v2")
+autoplay = "default"
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_osi0k")

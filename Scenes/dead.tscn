@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://tmps4t2nth1a"]
+
+[ext_resource type="Texture2D" uid="uid://dr2g7qy6klye1" path="res://sprites/robots/dead.png" id="1_6dcic"]
+[ext_resource type="Script" path="res://scripts/dead.gd" id="2_mxgo8"]
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+amount = 150
+texture = ExtResource("1_6dcic")
+spread = 65.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 1000.0
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+script = ExtResource("2_mxgo8")
+
+[node name="freeze" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+autostart = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="freeze" to="." method="_on_freeze_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
