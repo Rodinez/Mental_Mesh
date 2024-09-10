@@ -87,6 +87,8 @@ func _on_timer_timeout():
 
 func _on_area_2d_body_entered(body):
 	if "saw" in body.name:
+		for i in range(5):
+			$sound.play()
 		Global.dead[1] = true
 		var blood_instance = blood.instantiate()
 		blood_instance.global_position = global_position 

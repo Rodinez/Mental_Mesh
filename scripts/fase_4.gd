@@ -3,6 +3,8 @@ extends Node2D
 var be_tween = false
 var opened = [false, false, false, false, false, false, false, false]
 var okay = [false, false, false, false]
+var plate = [true, true, true, true]
+var sound = true
 
 func _ready():
 	Global.can_move = true
@@ -18,25 +20,39 @@ func _process(_delta):
 	if opened[0] and opened[4]:
 		$TileMap.set_layer_enabled(3,false)
 		$TileMap.set_layer_enabled(7,true)
+		if plate[0]:
+			$pressure_sound.play()
+			plate[0] = false
 		okay[0] = true
 	if opened[1] and opened[5]:
 		$TileMap.set_layer_enabled(4,false)
 		$TileMap.set_layer_enabled(8,true)
+		if plate[1]:
+			$pressure_sound.play()
+			plate[1] = false
 		okay[1] = true
 	if opened[2] and opened[6]:
 		$TileMap.set_layer_enabled(5,false)
 		$TileMap.set_layer_enabled(9,true)
+		if plate[2]:
+			$pressure_sound.play()
+			plate[2] = false
 		okay[2] = true
 	if opened[3] and opened[7]:
 		$TileMap.set_layer_enabled(6,false)
 		$TileMap.set_layer_enabled(10,true)
+		if plate[3]:
+			$pressure_sound.play()
+			plate[3] = false
 		okay[3] = true
 	if not false in okay:
 		Global.opened_doors[0] = true
 		Global.opened_doors[1] = true
 		Global.safe[0] = true
 		Global.safe[1] = true
-		$door_sound.play()
+		if sound:
+			$door_sound.play()
+			sound = false
 	if Global.opened_doors[0]:
 		$TileMap.set_layer_enabled(1,true)
 		$trapdoor_p1.visible = true

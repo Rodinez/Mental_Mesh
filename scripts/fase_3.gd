@@ -4,6 +4,7 @@ var lost = false
 var paper_read = [false,false,false,false,false]
 var floor_passed = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
 var be_tween = false
+var sound = true
 
 func _ready():
 	Global.fase = 3
@@ -32,45 +33,12 @@ func _ready():
 	$Node2D5/Control.global_position = Vector2(545,1235)
 
 func _process(_delta):
-	if($Node2D.player_nearby and Input.is_action_just_pressed("interact") and Global.player_now == 2):
-		paper_read[0] = !paper_read[0]
-		if(paper_read[0]):
-			$Node2D/Control.visible = true
-			$paper_sound.play()
-		else:
-			$Node2D/Control.visible = false
-	if($Node2D2.player_nearby and Input.is_action_just_pressed("interact") and Global.player_now == 2):
-		paper_read[1] = !paper_read[1]
-		if(paper_read[1]):
-			$Node2D2/Control.visible = true
-			$paper_sound.play()
-		else:
-			$Node2D2/Control.visible = false
-	if($Node2D3.player_nearby and Input.is_action_just_pressed("interact") and Global.player_now == 2):
-		paper_read[2] = !paper_read[2]
-		if(paper_read[2]):
-			$Node2D3/Control.visible = true
-			$paper_sound.play()
-		else:
-			$Node2D3/Control.visible = false
-	if($Node2D4.player_nearby and Input.is_action_just_pressed("interact") and Global.player_now == 2):
-		paper_read[3] = !paper_read[3]
-		if(paper_read[3]):
-			$Node2D4/Control.visible = true
-			$paper_sound.play()
-		else:
-			$Node2D4/Control.visible = false
-	if($Node2D5.player_nearby and Input.is_action_just_pressed("interact") and Global.player_now == 2):
-		paper_read[4] = !paper_read[4]
-		if(paper_read[4]):
-			$Node2D5/Control.visible = true
-			$paper_sound.play()
-		else:
-			$Node2D5/Control.visible = false
 	if not false in floor_passed:
 		Global.opened_doors[0] = true
 		Global.opened_doors[1] = true
-		$door_sound.play()
+		if sound:
+			$door_sound.play()
+			sound = false
 	if Global.opened_doors[0]:
 		$TileMap.set_layer_enabled(1,true)
 		$trapdoor_p1.visible = true

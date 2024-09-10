@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cfyqbu03ij1l4"]
+[gd_scene load_steps=16 format=3 uid="uid://cfyqbu03ij1l4"]
 
 [ext_resource type="PackedScene" uid="uid://c31h4mmolm8en" path="res://Scenes/door.tscn" id="1_gww0k"]
 [ext_resource type="Texture2D" uid="uid://b3v54x5lknmbw" path="res://sprites/background.jpg" id="1_q2o0l"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://iibfsyvj6irk" path="res://Scenes/safe.tscn" id="9_4syoh"]
 [ext_resource type="AudioStream" uid="uid://c6dsduxh1fs34" path="res://sounds/sound_effects/stairs.ogg" id="10_w0v16"]
 [ext_resource type="AudioStream" uid="uid://c7otfcpdvg28p" path="res://sounds/sound_effects/stone_door.ogg" id="11_xf7f2"]
+[ext_resource type="AudioStream" uid="uid://qro8l6xv0gjd" path="res://sounds/sound_effects/lever.wav" id="12_qd6v0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vml2p"]
 texture = ExtResource("2_1wv3r")
@@ -241,15 +242,13 @@ script = ExtResource("1_wlkqf")
 
 [node name="trapdoor_p1" parent="." instance=ExtResource("1_xtcjq")]
 visible = false
-show_behind_parent = true
-top_level = true
 position = Vector2(707, 2224)
+gravity_scale = 0.0
 
 [node name="trapdoor_p2" parent="." instance=ExtResource("1_xtcjq")]
 visible = false
-show_behind_parent = true
-top_level = true
 position = Vector2(708, 4255)
+gravity_scale = 0.0
 
 [node name="porta1" parent="." instance=ExtResource("1_gww0k")]
 position = Vector2(579, 2223)
@@ -260,7 +259,6 @@ position = Vector2(579, 4256)
 rotation = 1.5708
 
 [node name="background" type="Sprite2D" parent="."]
-visible = false
 z_index = -99
 position = Vector2(-4015, -156)
 scale = Vector2(180.784, 100)
@@ -408,10 +406,16 @@ shape = SubResource("RectangleShape2D_jp02u")
 [node name="trapdoor_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_w0v16")
 volume_db = -5.0
-attenuation = 2.39435e-05
+max_distance = 1e+09
+attenuation = 1.15639e-05
 
 [node name="door_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_xf7f2")
+volume_db = -10.0
+pitch_scale = 2.0
+
+[node name="pressure_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_qd6v0")
 volume_db = -10.0
 pitch_scale = 2.0
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://crmglb0tanna"]
+[gd_scene load_steps=21 format=3 uid="uid://crmglb0tanna"]
 
 [ext_resource type="Script" path="res://scripts/fase_3.gd" id="1_2a20b"]
 [ext_resource type="Texture2D" uid="uid://c5dk62d6u1ptp" path="res://sprites/tilemap/ambiente.png" id="1_f04hd"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://bix2wb1havqcy" path="res://Scenes/papel.tscn" id="9_ae1oc"]
 [ext_resource type="Script" path="res://scripts/papel_fase3.gd" id="10_66ont"]
 [ext_resource type="AudioStream" uid="uid://c7otfcpdvg28p" path="res://sounds/sound_effects/stone_door.ogg" id="12_vf8rl"]
-[ext_resource type="AudioStream" uid="uid://bu554ky4qjevp" path="res://sounds/sound_effects/paper.wav" id="13_ar04j"]
 [ext_resource type="AudioStream" uid="uid://c6dsduxh1fs34" path="res://sounds/sound_effects/stairs.ogg" id="14_omyv2"]
 [ext_resource type="AudioStream" uid="uid://bog2kethxlr4r" path="res://sounds/sound_effects/right.wav" id="15_shgml"]
 [ext_resource type="AudioStream" uid="uid://3141h27a6r8a" path="res://sounds/sound_effects/wrong.ogg" id="16_g2cce"]
@@ -725,15 +724,6 @@ script = ExtResource("10_66ont")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="door_sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_vf8rl")
-volume_db = -10.0
-pitch_scale = 2.0
-
-[node name="paper_sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_ar04j")
-volume_db = -20.0
-
 [node name="trapdoor_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_omyv2")
 volume_db = -5.0
@@ -745,6 +735,11 @@ volume_db = -20.0
 
 [node name="wrong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_g2cce")
+
+[node name="door_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_vf8rl")
+volume_db = -10.0
+pitch_scale = 2.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

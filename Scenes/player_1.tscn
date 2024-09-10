@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://chv4a2ho4hnwf"]
+[gd_scene load_steps=10 format=3 uid="uid://chv4a2ho4hnwf"]
 
 [ext_resource type="Script" path="res://Scripts/player_1.gd" id="1_3pc07"]
 [ext_resource type="Texture2D" uid="uid://oplubuwfba8y" path="res://sprites/robots/robot1 - costas.png" id="1_dbfv4"]
 [ext_resource type="Texture2D" uid="uid://cw32nt3y6uyn8" path="res://sprites/robots/robot1 - direita.png" id="2_y0y5e"]
 [ext_resource type="Texture2D" uid="uid://b3boes14cupnb" path="res://sprites/robots/robot1 - esquerda.png" id="3_htab0"]
 [ext_resource type="Texture2D" uid="uid://c3h15walc7t11" path="res://sprites/robots/robot1 - frente.png" id="4_ufh0r"]
+[ext_resource type="AudioStream" uid="uid://4tg6tx6vfpiu" path="res://sounds/sound_effects/saw.wav" id="6_1cs58"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odlo0"]
 size = Vector2(24, 13)
@@ -71,6 +72,10 @@ shape = SubResource("RectangleShape2D_tar6j")
 zoom = Vector2(3, 3)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1cs58")
+volume_db = -15.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

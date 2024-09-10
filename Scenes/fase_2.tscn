@@ -416,11 +416,6 @@ position = Vector2(315, 1847)
 wait_time = 2.0
 autostart = true
 
-[node name="door_sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("18_gry4u")
-volume_db = -10.0
-pitch_scale = 2.0
-
 [node name="trapdoor_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("19_n8wsq")
 volume_db = -5.0
@@ -428,10 +423,15 @@ attenuation = 8.63161e-05
 
 [node name="lever_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_hx43h")
-volume_db = -10.0
+volume_db = -15.0
 
 [node name="pressure_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_hx43h")
+volume_db = -10.0
+pitch_scale = 2.0
+
+[node name="door_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_gry4u")
 volume_db = -10.0
 pitch_scale = 2.0
 

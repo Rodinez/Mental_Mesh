@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bix2wb1havqcy"]
+[gd_scene load_steps=8 format=3 uid="uid://bix2wb1havqcy"]
 
 [ext_resource type="Texture2D" uid="uid://vdxcnrbeskb4" path="res://sprites/interativos/papel.png" id="2_h2rib"]
+[ext_resource type="AudioStream" uid="uid://bu554ky4qjevp" path="res://sounds/sound_effects/paper.wav" id="3_fx514"]
 [ext_resource type="Texture2D" uid="uid://14jsq47lnogq" path="res://sprites/interativos/papel_int.png" id="3_nwd1n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0ospf"]
@@ -71,6 +72,10 @@ disabled = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="paper_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fx514")
+volume_db = -20.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
