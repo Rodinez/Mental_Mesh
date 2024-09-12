@@ -33,6 +33,7 @@ func _ready():
 	$Node2D5/Control.global_position = Vector2(545,1235)
 
 func _process(_delta):
+	
 	if not false in floor_passed:
 		Global.opened_doors[0] = true
 		Global.opened_doors[1] = true

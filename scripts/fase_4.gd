@@ -13,6 +13,7 @@ func _ready():
 	Global.leave = [0, 0]
 	Global.dead = [false, false]
 	Global.opened_doors = [false, false]
+	Global.safe = [false, false]
 	opened = [false,false,false,false,false,false,false,false]
 
 
